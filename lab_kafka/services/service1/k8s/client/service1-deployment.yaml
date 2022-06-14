@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-deployment
+  name: client2-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: client
+      app: client2
   template:
     metadata:
      labels:
-       app: client
+       app: client2
     spec:
       containers:
         - image: service3:0.1
           imagePullPolicy: Never
-          name: client
+          name: client2
           ports:
             - containerPort: 80

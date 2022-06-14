@@ -6,14 +6,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /*        # шлях по якому відбувається перенаправлення на сервіс
-            pathType: Prefix           # все, що починається з `/api` буде направлено на сервіс demo-service. Альтернативно можна використовувати `Exact` та `ImplementationSpecific`
-            backend:
-              service:
-                name: nginx # ім'я сервісу
-                port:
-                  number: 80           # порт на якому запущено сервіс
-          - path: /
+          - path: /api/service3
             pathType: Prefix
             backend:
               service:
