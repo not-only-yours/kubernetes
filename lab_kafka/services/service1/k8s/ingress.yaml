@@ -6,10 +6,10 @@ spec:
   rules:
     - http:
         paths:
-          - path: /api/service3
+          - path: /api/client2
             pathType: Prefix
             backend:
               service:
-                name: client3-service
+                name: client2-service
                 port:
                   number: 80
