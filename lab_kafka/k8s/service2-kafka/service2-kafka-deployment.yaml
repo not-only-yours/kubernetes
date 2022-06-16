@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client2-deployment
+  name: service2-kafka-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: client2
+      app: service2-kafka
   template:
     metadata:
      labels:
-       app: client2
+       app: service2-kafka
     spec:
       containers:
-        - image: service3:0.1
+        - image: service2-kafka:0.1
           imagePullPolicy: Never
-          name: client2
+          name: service2-kafka
           ports:
-            - containerPort: 80
+            - containerPort: 8081

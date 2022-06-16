@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service1-kafka-deployment
+spec:
+  replicas: 1                      # кількість екземплярів Pod, що буде створено цим Deployment
+  selector:
+    matchLabels:
+      app: service1-kafka               # селектор по якому Deployment зв'язаний з Pod
+  template:
+    metadata:
+     labels:
+       app: service1-kafka               # мітка Pod по якому вона буде зв'язана з Deployment та Service
+    spec:
+      containers:
+        - image: service1-kafka:0.1       # образ Docker
+          imagePullPolicy: Never   # вказує k8s, що образ не потрібно завантажувати (варто використовувати лише для випадків, коли образи локальні)
+          name: service1-kafka           # ім'я контейнеру
+          ports:
+            - containerPort: 8081  # порт по якому можна звертатись до поди
