@@ -10,4 +10,4 @@ for (let i = 1; i <= 1; i++) {
 }
 
 // Consuming the sent messages
-await consumeMessage();
+//await consumeMessage();

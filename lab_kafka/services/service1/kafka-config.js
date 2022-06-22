@@ -12,6 +12,6 @@ export const kafkaGroupId = 'message-queue-group';
 
 // kafka client with basic config
 export const KafkaClient = new Kafka({
-  brokers: ['kafka-service:9092','kafka-service:9000']
+  brokers: [kafkaBroker]
 });
 
